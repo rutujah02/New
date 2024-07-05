@@ -1,0 +1,46 @@
+<header>
+    <div class="mb-3">
+      <h3 class="text-dark text-muted">Task Management</h3>
+      <div class="button-group">
+        <!-- <button type="button" class="btn btn-info" (click)="logout()">Log Out</button>
+        <button type="button" class="btn btn-primary" (click)="newTask()">+ New Task</button>
+        <button type="button" class="btn btn-secondary" (click)="notification()">Notifications</button> -->
+        <button type="button" class="btn btn-info" (click)="onLogout()">Log Out</button>
+        <button type="button" class="btn btn-primary" (click)="newTask()">+ New Task</button>
+        <button type="button" class="btn btn-secondary" (click)="noti()">Notifications</button>
+    </div>
+    </div>
+  </header>
+
+  <div class="container mt-3">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Due Date</th>
+                    <th scope="col">Priority</th>
+                    <th scope="col">Delete</th>
+                    <th scope="col">Update</th>
+                    <!-- <th scope="col">Status</th> -->
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let task of readTask">
+                    <td>{{task.ID }}</td>
+                    <td>{{task.Name }}</td>
+                    <td>{{task.Description }}</td>
+                    <td>{{task.Date }}</td>
+                    <td>{{task.Priority }}</td>
+                    <td><button class="btn btn-danger" (click)="deleteId(task.ID)">Delete</button></td>
+                    <td><a [routerLink]="['/add-task', task.ID]" class="btn btn-primary">Update</a></td>
+                    <!-- <td>{{task.status }}</td> -->
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+  </div>

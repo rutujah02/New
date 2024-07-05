@@ -1,0 +1,67 @@
+<div class="container-fluid">
+    <div class="row mt-5">
+        <div class="col"></div>
+        <div class="col-4"></div>
+        <div class="col"></div>
+        <header>
+            <div class="mb-3">
+                <h2 class="text-dark">Task Management</h2>
+                
+            </div>
+        </header>
+        <button type="button" id="logout" class="btn btn-info" (click)="onLogout()">Log Out</button>
+               
+    </div>
+</div>
+<h4>{{errMsg}}</h4>
+<div class="container mt-3">
+    <form [formGroup]="userForm" >
+        <div class="col-md-4">
+            <p>
+                <label for="title">Name</label>
+                <input type="text" class="form-control" formControlName="Name" />
+            </p>
+        </div>
+        <div class="col-md-4">
+            <p>
+                <label for="summary">Description</label>
+                <textarea rows="3" class="form-control" formControlName="Description"></textarea>
+            </p>
+        </div>
+        <div class="col-md-4">
+            <p>
+                <label for="due-date">Due Date</label>
+                <input type="date" class="form-control" formControlName="Date" />
+            </p>
+        </div>
+        <div class="col-md-4">
+            <p>
+                <label for="priority">Task's Priority:</label>
+                <select name="priority" class="form-control" formControlName="Priority">
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+            </p>
+        </div>
+        <div class="col-md-4 mt-2">
+            <p class="actions">
+                <button type="button" id="cancel" (click)="onCancel()">Cancel</button>
+            </p>
+        </div>
+        <div class="col-md-4 mt-2" *ngIf="!getparamid" (click)="taskSubmit()">
+            <p class="actions">
+                
+                <button type="submit" id="submit" >Create</button>
+            </p>
+        </div>
+        <!-- <div class="col-md-4 mt-2" *ngIf="getparamid" (click)="taskUpdate($event)"> -->
+            <div class="col-md-4" *ngIf="getparamid" >
+            <p class="actions">
+                <button type="submit" id="complete" class=" mt-2" (click)="completed()">Complete</button>
+                <button type="submit" id="submit" class=" mt-2" (click)="taskUpdate()">Update Task</button>
+            </p>
+        </div>
+    </form>
+</div>
+

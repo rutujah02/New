@@ -1,0 +1,154 @@
+/* Global styles */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    /* color: #333; */
+    background-color: #f9f9f9;
+  }
+  
+  /* Container styles */
+  
+  .container-fluid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Header styles */
+  
+  header {
+    background-color: wheat;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  header h2 {
+    margin: 0;
+  }
+  
+  /* Logout button styles */
+
+#logout {
+    background-color: #337ab7;
+    color: #fff;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100px;
+    position: absolute;
+    right: 400px;
+    top: 150px;
+  }
+  
+  #logout:hover {
+    background-color: #23527c;
+  }
+  
+  #logout:focus {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Form styles */
+  
+  form {
+    margin-top: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  input[type="date"] {
+    padding: 10px 20px;
+  }
+  
+  select {
+    padding: 10px 20px;
+  }
+  
+  button[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+
+  button[type="button"] {
+    background-color: #ccc;
+    color: #333;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button[type="button"]:hover {
+    background-color: #aaa;
+  }
+  
+  /* Actions styles */
+  
+  .actions {
+    text-align: right;
+  }
+  
+  .actions button[type="submit"] {
+    margin-left: 10px;
+  }
+  
+  /* Responsive styles */
+  
+  @media (max-width: 768px) {
+    .container-fluid {
+      padding: 10px;
+    }
+    .container {
+      padding: 10px;
+    }
+    form {
+      margin-top: 10px;
+    }
+    label {
+      margin-bottom: 5px;
+    }
+    input, textarea, select {
+      margin-bottom: 10px;
+    }
+    button[type="submit"] {
+      padding: 5px 10px;
+    }
+    button[type="button"] {
+      padding: 5px 10px;
+    }
+  }

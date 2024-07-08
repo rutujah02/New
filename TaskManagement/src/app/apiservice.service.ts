@@ -10,6 +10,7 @@ export class ApiserviceService {
   apiUrl="http://localhost:3000/tasks";
   createUrl="http://localhost:3000/tasks";
   updateUrl="http://localhost:3000/tasks/status";
+  loginUrl="http://localhost:3000/tasks/login";
   constructor(private http:HttpClient) { }
 
   //Get all tasks
@@ -43,19 +44,14 @@ export class ApiserviceService {
         return this.http.get(`${this.createUrl}/${ids}`);
       }
 
-      // updateStatus(ID:any, data:any):Observable<any>{
-      //   let ids=ID;
-      //   return this.http.put(`${this.createUrl}/${ids}`,data);
-      // }
-
-      // completedTask(ID:any, status:any):Observable<any>{
-      //   let ids=ID;
-      //   return this.http.put(`${this.createUrl}/${ids}`,status);
-      // }
-
       completedTask(id: any): Observable<any> {
         let ID=id
-        const updatedStatus = { status: 'Done' }; // New status value
+        const updatedStatus = { status: 'Done' };
         return this.http.put(`${this.updateUrl}/${ID}`, updatedStatus);
       }
+
+      login(email: string, password: string): Observable<any> {
+        return this.http.post<any>(this.loginUrl, { email, password });
+      }
+      
 }

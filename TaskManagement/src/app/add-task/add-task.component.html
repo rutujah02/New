@@ -6,16 +6,14 @@
         <header>
             <div class="mb-3">
                 <h2 class="text-dark">Task Management</h2>
-                
             </div>
         </header>
         <button type="button" id="logout" class="btn btn-info" (click)="onLogout()">Log Out</button>
-               
     </div>
 </div>
 <h4>{{errMsg}}</h4>
 <div class="container mt-3">
-    <form [formGroup]="userForm" >
+    <form [formGroup]="userForm">
         <div class="col-md-4">
             <p>
                 <label for="title">Name</label>
@@ -36,14 +34,20 @@
         </div>
         <div class="col-md-4">
             <p>
-                <label for="priority">Task's Priority:</label>
+                <!-- <label for="priority">Task's Priority:</label>
                 <select name="priority" class="form-control" formControlName="Priority">
                     <option value="High">High</option>
                     <option value="Medium">Medium</option>
                     <option value="Low">Low</option>
+                </select> -->
+
+                <label for="priority">Task's Priority:</label>
+                <select name="priority" class="form-control" formControlName="Priority">
+                    <option *ngFor="let priority of priorities" [value]="priority">{{ priority }}</option>
                 </select>
             </p>
         </div>
+
         <div class="col-md-4 mt-2">
             <p class="actions">
                 <button type="button" id="cancel" (click)="onCancel()">Cancel</button>
@@ -51,12 +55,12 @@
         </div>
         <div class="col-md-4 mt-2" *ngIf="!getparamid" (click)="taskSubmit()">
             <p class="actions">
-                
-                <button type="submit" id="submit" >Create</button>
+
+                <button type="submit" id="submit">Create</button>
             </p>
         </div>
         <!-- <div class="col-md-4 mt-2" *ngIf="getparamid" (click)="taskUpdate($event)"> -->
-            <div class="col-md-4" *ngIf="getparamid" >
+        <div class="col-md-4" *ngIf="getparamid">
             <p class="actions">
                 <button type="submit" id="complete" class=" mt-2" (click)="completed()">Complete</button>
                 <button type="submit" id="submit" class=" mt-2" (click)="taskUpdate()">Update Task</button>
@@ -64,4 +68,3 @@
         </div>
     </form>
 </div>
-

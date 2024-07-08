@@ -14,7 +14,7 @@ export class AddTaskComponent implements OnInit {
   status: any;
 
   // userForm!:FormGroup
-
+  priorities = ['High', 'Medium', 'Low'];
   constructor(private api: ApiserviceService, private router: ActivatedRoute, private route: Router) { }
 
   ngOnInit(): void {
@@ -32,7 +32,6 @@ export class AddTaskComponent implements OnInit {
         })
       })
     }
-
   }
 
   userForm = new FormGroup({
@@ -64,14 +63,6 @@ export class AddTaskComponent implements OnInit {
     })
     this.route.navigate(['/home']);
   }
-
-  // completed(){
-  //   this.api.completedTask(this.getparamid, this.status).subscribe((res)=>{
-  //     console.log(res, 'completed task')
-  //     // console.log(this.getparamid)
-  //     })
-  //     this.route.navigate(['/home'])
-  // }
 
   taskUpdate() {
     console.log(this.userForm.value);

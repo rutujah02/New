@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiserviceService } from '../apiservice.service';
 
 @Component({
   selector: 'app-login',
@@ -7,23 +9,21 @@ import { Router } from '@angular/router';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-constructor(private route:Router){}
+constructor(private route:Router, private api:ApiserviceService){}
 
 email: string = '';
 password: string = '';
-
-  predefinedEmail: string = 'test@example.com';
-  predefinedPassword: string = 'password';
+message:string = '';
 
   login() {
-    // console.log('Email entered:', this.email);
-    // console.log('Password entered:', this.password);
-
-    if (this.email === this.predefinedEmail && this.password === this.predefinedPassword) {
-      console.log('Login successful');
-      this.route.navigate(['/home'])
-    } else {
-      console.log('Login failed. Incorrect email or password.');
-    }
+    this.api.login(this.email, this.password).subscribe((data) => {
+      console.log(data);
+        if (data.status === 'success') {
+          // Redirect to home page
+          this.route.navigate(['/home']);
+        } else {
+          this.message = data.message;
+        }
+          })
   }
 }

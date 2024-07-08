@@ -24,20 +24,21 @@ db.connect(err => {
 })
 
 // Route for login
-// app.post('/api/login', (req, res) => {
-//     const { username, password } = req.body;
-//     const query = `SELECT * FROM users WHERE username = ? AND password = ?`;
-//     db.query(query, [username, password], (err, results) => {
-//       if (err) {
-//         res.status(500).send({ error: 'Internal Server Error' });
-//       } else if (results.length > 0) {
-//         req.session.user_id = results[0].id;
-//         res.send({ message: 'Login successful' });
-//       } else {
-//         res.status(401).send({ error: 'Invalid username or password' });
-//       }
-//     });
-//   });
+app.post('/tasks/login', (req, res) => {
+    // console.log('Hello')
+    const { email, password } = req.body;
+    const query = `SELECT * FROM tasks WHERE email = '${email}' AND password = '${password}'`;
+    db.query(query, (err, results) => {
+      if (err) {
+        res.status(500).send({ error: 'Internal Server Error' });
+      }
+    if (results.length > 0) {
+        res.status(200).send({ status: 'success', message: 'Login successful' });
+      } else {
+        res.status(401).send({ status: 'error', message: 'Invalid email or password' });
+      }
+    });
+  });
 
 //get all data
 app.get('/tasks', (req, res) => {

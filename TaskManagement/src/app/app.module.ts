@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AddTaskComponent } from './add-task/add-task.component';
-// import { EditTaskComponent } from './edit-task/edit-task.component';
 import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -17,7 +16,6 @@ import { NotificationsComponent } from './notifications/notifications.component'
   declarations: [
     AppComponent,
     AddTaskComponent,
-    // EditTaskComponent,
     HomeComponent,
     LoginComponent,
     NotificationsComponent

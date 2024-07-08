@@ -27,7 +27,7 @@ db.connect(err => {
 app.post('/tasks/login', (req, res) => {
     // console.log('Hello')
     const { email, password } = req.body;
-    const query = `SELECT * FROM tasks WHERE email = '${email}' AND password = '${password}'`;
+    const query = `SELECT * FROM users WHERE email = '${email}' AND password = '${password}'`;
     db.query(query, (err, results) => {
       if (err) {
         res.status(500).send({ error: 'Internal Server Error' });

@@ -1,20 +1,21 @@
 <header>
     <div class="mb-3">
-      <h3 class="text-dark text-muted">Task Management</h3>
+      <h1 class="text-dark text-muted">Task Management</h1>
       <div class="button-group">
-        <button type="button" class="btn btn-info" (click)="onLogout()">Log Out</button>
-        <button type="button" class="btn btn-primary" (click)="newTask()">+ New Task</button>
-        <button type="button" class="btn btn-secondary" (click)="noti()">Notifications</button>
+        <button type="button" class="btn btn-info btn-lg" (click)="onLogout()">Log Out</button>
+        <button type="button" class="btn btn-primary btn-lg" (click)="newTask()">+ New Task</button>
+        <button type="button" class="btn btn-secondary btn-lg" (click)="noti()">Notifications</button>
     </div>
     </div>
   </header>
 
   <div class="container mt-3">
     <div class="row">
+      <h2>Tasks To-Do</h2>
         <div class="col-md-12">
-            <table class="table table-bordered">
-                <thead>
-                  <tr>
+            <table class="table  table-striped table-hover">
+                <thead class="table-dark">
+                  <tr class="table-active">
                     <th scope="col">ID</th>
                     <th scope="col">Title</th>
                     <th scope="col">Description</th>

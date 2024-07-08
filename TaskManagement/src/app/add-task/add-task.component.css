@@ -65,6 +65,13 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
   
+  #complete{
+    background-color: #337ab7;
+  }
+
+  #submit{
+    background-color: green;
+  }
   /* Form styles */
   
   form {
@@ -105,8 +112,8 @@
   }
 
   button[type="button"] {
-    background-color: #ccc;
-    color: #333;
+    background-color:red;
+    color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -124,9 +131,42 @@
   }
   
   .actions button[type="submit"] {
-    margin-left: 10px;
+    margin-left: 2px;
   }
   
+  .button-container {
+    display: flex;
+    justify-content: center; 
+}
+
+.button-container button {
+    margin: 0 1px; 
+}
+
+.custom-select {
+  
+  padding: 9px 12px; /* Padding inside the dropdown */
+  font-size: 16px; /* Font size */
+  border: 1px solid #ccc; /* Border */
+  border-radius: 4px; /* Rounded corners */
+  background-color: #fff; /* Background color */
+  appearance: none; /* Remove default appearance (such as arrow) */
+}
+
+/* .custom-select:hover,
+.custom-select:focus {
+  border-color: #007bff; 
+} */
+
+.custom-select::after {
+  content: '\25BC'; /* Unicode for down arrow */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none; /* Prevent clicks on the arrow */
+}
+
   /* Responsive styles */
   
   @media (max-width: 768px) {

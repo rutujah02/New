@@ -1,10 +1,19 @@
 /* Global Styles */
+/* *{
+  box-sizing: border-box; 
+  background-color: #e0b2f3;
+} */
 
 body {
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
   }
   
+  h1{
+    flex: 1;
+    text-align: center;
+    margin-top: 2rem;
+  }
   .text-dark {
     color: #333;
   }
@@ -24,7 +33,7 @@ body {
   /* Header Styles */
   
   header {
-    background-color: #fff;
+    background-color: #e0b2f3;
     padding: 1rem;
     border-bottom: 1px solid #ddd;
   }
@@ -44,10 +53,11 @@ body {
   .table {
     margin-top: 2rem;
   }
-  
+
   .table thead th {
     background-color: #f0f0f0;
     border-bottom: 1px solid #ddd;
+    vertical-align: middle;
   }
   
   .table tbody td {
@@ -56,17 +66,7 @@ body {
   
   .table .btn {
     width: 60%;
-    margin-left: 40px;
-  }
-  
-  /* Button Styles */
-  
-  .btn {
-    border: none;
-    border-radius: 0.25rem;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    cursor: pointer;
+    margin-left: 20px;
   }
   
   .btn-info {

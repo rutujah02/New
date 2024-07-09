@@ -108,7 +108,7 @@
   }
   
   button[type="submit"]:hover {
-    background-color: #3e8e41;
+    background-color: #aaa;
   }
 
   button[type="button"] {
@@ -133,6 +133,9 @@
   .actions button[type="submit"] {
     margin-left: 2px;
   }
+  .actions button[type="submit"]:hover {
+    background-color: #aaa;
+  }
   
   .button-container {
     display: flex;
@@ -145,12 +148,12 @@
 
 .custom-select {
   
-  padding: 9px 12px; /* Padding inside the dropdown */
-  font-size: 16px; /* Font size */
-  border: 1px solid #ccc; /* Border */
-  border-radius: 4px; /* Rounded corners */
-  background-color: #fff; /* Background color */
-  appearance: none; /* Remove default appearance (such as arrow) */
+  padding: 9px 12px; 
+  font-size: 16px; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  background-color: #fff; 
+  appearance: none; 
 }
 
 /* .custom-select:hover,
